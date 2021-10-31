@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import useAuth from '../hooks/useAuth';
+
 
 const Booking = () => {
+    const {user }= useAuth()
     const { id } = useParams();
     const [service, setService] = useState({})
     useEffect(() => {
@@ -35,13 +38,13 @@ const Booking = () => {
                 <Col>
                     <form>
                         <div className="mb-3">
-                            <input type="text" placeholder="Name" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                            <input type="text" placeholder="Name" className="form-control" defaultValue={user?.displayName} />
                         </div>
                         <div className="mb-3">
-                            <input type="email" placeholder="Email" className="form-control" id="exampleInputPassword1" />
+                            <input type="email" placeholder="Email" className="form-control" defaultValue={user?.email} />
                         </div>
                         <div className="mb-3">
-                            <input type="text" placeholder="Phone" className="form-control" id="exampleInputPassword1" />
+                            <input type="text" placeholder="Phone" className="form-control" />
                         </div>
                         <div className="mb-3">
                             <input type="text" placeholder="Booking Service" className="form-control" value={name} />
