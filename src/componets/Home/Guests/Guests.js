@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const Guests = () => {
     const [guests,setGuests] = useState([])
     useEffect(()=>{
-        fetch(`http://localhost:9000/guests`)
+        fetch(`https://floating-scrubland-94674.herokuapp.com/guests`)
         .then(res=> res.json())
         .then(data => setGuests(data.guests))
     },[])

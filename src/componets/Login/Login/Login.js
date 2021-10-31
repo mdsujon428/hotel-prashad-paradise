@@ -7,7 +7,8 @@ import { useHistory, useLocation } from 'react-router';
 const Login = () => {
     const location =useLocation();
     const history = useHistory();
-    const redirect_url = location.state?.from || '/home'
+    // console.log(location)
+    const redirect_url = location.state?.from || '/'
     const { logInUsingGoogle } = useAuth()
     const google = <FontAwesomeIcon style={{ color: 'white', fontSize: '22px' }} icon={faGoogle}> </FontAwesomeIcon>
 

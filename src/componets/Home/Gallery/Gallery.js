@@ -4,7 +4,7 @@ import { Card, Col, Row } from 'react-bootstrap';
 const Gallery = () => {
     const [gallery, setGallery] = useState([])
     useEffect(() => {
-        fetch('http://localhost:9000/gallery')
+        fetch('https://floating-scrubland-94674.herokuapp.com/gallery')
             .then(res => res.json())
             .then(data => setGallery(data))
     }, [])

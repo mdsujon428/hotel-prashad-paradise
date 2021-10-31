@@ -18,6 +18,12 @@ const Header = () => {
                             :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>                         
                         }
+                        {
+                            user.email &&<Nav.Link as={Link} to='/myOrders'>My Orders </Nav.Link>
+                        }
+                        {
+                            user.email &&<Nav.Link as={Link} to='/addService'>Add New Service </Nav.Link>
+                        }
                         <Navbar.Text>
                             Signed in as: <span style={{color:'red'}}>  { user?.displayName} </span> 
                         </Navbar.Text>

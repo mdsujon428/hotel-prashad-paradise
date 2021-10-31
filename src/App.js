@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './componets/Header/Header';
 import Home from './componets/Home/Home';
@@ -8,6 +7,9 @@ import Booking from './componets/Booking/Booking';
 import Login from './componets/Login/Login/Login';
 import AuthProvider from './Context/AuthProvider';
 import PrivateRoute from './componets/PrivateRoute/PrivateRoute';
+import AddNewService from './componets/Home/Services/AddNewService/AddNewService';
+import { NotFound } from 'http-errors';
+import MyOrders from './componets/MyOrders/MyOrders';
 
 function App() {
   return (
@@ -25,8 +27,17 @@ function App() {
             <PrivateRoute path='/home/:id'>
               <Booking></Booking>
             </PrivateRoute>
+            <Route path='/addService'>
+              <AddNewService></AddNewService>
+            </Route>
             <Route path='/login'>
               <Login></Login>
+            </Route>
+            <Route path='/myOrders'>
+              <MyOrders></MyOrders>
+            </Route>
+            <Route path='/*'>
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>
