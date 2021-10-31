@@ -16,7 +16,7 @@ const MyOrders = () => {
     const handleCancel = (e) => {
         const confirm = window.confirm('Are sure you want to delete this')
         if (confirm) {
-            fetch(`http://localhost:9000`, {
+            fetch(`https://floating-scrubland-94674.herokuapp.com/`, {
                 method: 'DELETE',
                 headers: {
                     'content-type': 'application/json'
